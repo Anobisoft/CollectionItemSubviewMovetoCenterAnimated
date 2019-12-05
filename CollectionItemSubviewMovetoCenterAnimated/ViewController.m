@@ -74,7 +74,8 @@ static NSArray *staticColors;
     CGPoint center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
     NSLog(@"Center %@", NSStringFromCGPoint(center));
     [UIView animateWithDuration:0.8f animations:^{
-        figure.backgroundColor = [UIColor blackColor];
+        figure.layer.borderColor = [UIColor blackColor].CGColor;
+        figure.layer.borderWidth = 1;
         figure.frame = CGRectMake(center.x - figureLargeSize / 2, center.y - figureLargeSize / 2, figureLargeSize, figureLargeSize);
     }];
 }
